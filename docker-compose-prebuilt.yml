@@ -1,0 +1,11 @@
+services:
+  chatbot:
+    image: my-chatbot:latest  # Use pre-built image instead of building
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - /tmp:/tmp  # For temporary PDF processing files
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
